@@ -4,5 +4,5 @@ trendyitunes = function(){
   pool = data.frame(Name = iTunes$feed$results$artistName, 
                     Detail = paste("Episode:",iTunes$feed$results$name), 
                     category = iTunes$feed$results$primaryGenreName,from = "iTunes")
-  list(pool = as.character(paste(pool$Name,collapse = "//  ")))
+  list(message = as.character(paste(pool$Name,collapse = "//  ")))
 }
