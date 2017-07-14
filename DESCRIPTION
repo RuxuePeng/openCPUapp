@@ -11,7 +11,7 @@ LazyData: false
 Depends: R (>= 3.4.0 (2017-04-21))
 Imports: 
     jsonlite,
-      RCurl,
-      dplyr,
-      plyr,
-      rJava
+    RCurl,
+    dplyr,
+    plyr,
+    rJava
