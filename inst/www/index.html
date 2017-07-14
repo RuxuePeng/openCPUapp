@@ -17,7 +17,7 @@
         //perform the request
         var req = ocpu.rpc("trendyitunes", {
         }, function(output){
-          $("#output").text(output.pool);
+          $("#output").text(output.message);
         });
         
         //if R returns an error, alert the error message
