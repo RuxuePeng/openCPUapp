@@ -8,7 +8,7 @@ Maintainer: Ruxue(Flora) Peng <rp2815@columbia.edu>
 Description: Example OpenCPU app to scrap
 License: MIT License
 LazyData: false
-Depends: R (= 3.4.0 )
+Depends: R (>= 3.4)
 Imports: 
     jsonlite,
     rJava
