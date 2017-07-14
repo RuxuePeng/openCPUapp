@@ -1,12 +1,17 @@
-Package: tvscore
+Package: trendyitunes
 Type: Package
-Title: Score data to predict TV hours
-Version: 0.3
-Date: 2017-05-13
-Author: Jeroen Ooms
-Maintainer: Jeroen Ooms <jeroen@berkeley.edu>
-Description: Example OpenCPU app to score data
-License: Apache License 2.0
+Title: Monitor trending itunes shows
+Version: 0.1
+Date: 2017-07-14
+Author: Ruxue(Flora) Peng
+Maintainer: Ruxue(Flora) Peng <rp2815@columbia.edu>
+Description: Example OpenCPU app to scrap
+License: MIT License
 LazyData: false
-Depends: R (>= 2.10)
-Imports: mgcv
+Depends: R (>= 3.4.0 (2017-04-21))
+Imports: 
+    jsonlite,
+      RCurl,
+      dplyr,
+      plyr,
+      rJava
