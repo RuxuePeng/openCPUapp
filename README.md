@@ -1,7 +1,8 @@
-Deploy scoring model
+Try out
+App that gives you popular shows on iTunes
 ====================
 
-This package illustrates how to deploy a model for remote scoring/prediction. 
+This package illustrates how to monitor the trending shows on iTunes via RSS feeds. 
 
 
     # Install in R
