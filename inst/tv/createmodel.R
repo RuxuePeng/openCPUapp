@@ -1,22 +1,28 @@
 #This script was used to create the model that is included with the package
 
-#General Social Survey data
-#For info see http://www3.norc.org/GSS+Website/Download/SPSS+Format/
-download.file("http://publicdata.norc.org/GSS/DOCUMENTS/OTHR/2012_spss.zip", destfile="2012_spss.zip")
-unzip("2012_spss.zip")
-GSS <- foreign::read.spss("GSS2012.sav", to.data.frame=TRUE)
+#packages.used=c("tm", "dplyr", "tidytext","jsonlite", "rJava","plyr","RCurl","XML","feedeR")
 
-#GAM model
-library(mgcv)
-mydata <- na.omit(GSS[c("age", "tvhours", "marital")])
-tv_model <- gam(tvhours ~ s(age, by=marital), data = mydata)
+# check packages that need to be installed.
+#packages.needed=setdiff(packages.used, 
+#                        intersect(installed.packages()[,1], 
+#                                  packages.used))
+# install additional packages
+#if(length(packages.needed)>0){
+#  install.packages(packages.needed, dependencies = TRUE)
+#}
 
-#Vizualize the model
-library(ggplot2)
-qplot(age, predict(tv_model), color=marital, geom="line", data=mydata) +
-  ggtitle("gam(tvhours ~ s(age, by=marital))") +
-  ylab("Average hours of TV per day")
+# load packages
+library("RCurl")
+library('jsonlite')
+library("dplyr")
+library("plyr")
+library("rJava")
 
-#Save the model
-dir.create("data", showWarnings=FALSE)
-save(tv_model, file="data/tv_model.rda")
+trendyitunes = function(){ 
+  iTunes = fromJSON("https://rss.itunes.apple.com/api/v1/us/tv-shows/top-tv-episodes/25/non-explicit/json")
+  pool = data.frame(Name = iTunes$feed$results$artistName, 
+                    Detail = paste("Episode:",iTunes$feed$results$name), 
+                    category = iTunes$feed$results$primaryGenreName,
+                    from = "iTunes")
+  return(pool)
+}
