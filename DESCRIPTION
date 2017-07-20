@@ -1,14 +1,30 @@
-Package: trendyitunes
+Package: revas
 Type: Package
 Title: Monitor trending itunes shows
 Version: 0.1
-Date: 2017-07-14
+Date: 2017-07-20
 Author: Ruxue(Flora) Peng
 Maintainer: Ruxue(Flora) Peng <rp2815@columbia.edu>
-Description: Example OpenCPU app to scrap
+Description: Recommend videos in terms of their relevance to a text and their freshness 
 License: MIT License
 LazyData: false
 Depends: R (>= 3.4)
 Imports: 
+    tm, 
+    dplyr,
+    tidytext,
+    rvest,
+    tibble,
+    qdap,
+    dplyr,
+    syuzhet,
+    factoextra,
+    scales,
+    reshape2,
+    parallel,
+    RANN,
+    topicmodels,
+    plyr,
+    lubridate,
     jsonlite,
     rJava
